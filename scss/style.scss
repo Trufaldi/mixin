@@ -1,0 +1,80 @@
+$baseFontSize: 18px;
+$containerWidth: 1000px;
+$colorGradient: linear-gradient(90deg, #68f091, #8228ea);
+$tablets: 768px;
+$phones: 480px;
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700;800&display=swap');
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: $baseFontSize;
+    line-height: 1.2;
+    height: 100%;
+}
+
+@mixin tablets {
+    @media screen and (max-width: $tablets) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media screen and (max-width: $phones) {
+        @content;
+    }
+}
+
+.container {
+    width: $containerWidth;
+    margin: 0 auto;
+}
+
+.header {
+    background: $colorGradient;
+    height: 100px;
+    width: 100%;
+    &:hover {
+        background: linear-gradient(90deg, #7a81f2, #a630b6, #e8664c);
+    }
+    display: flex;
+    justify-content: space-between;
+    &__nav {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+    }
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @include phones {
+        background: red;
+    }
+}
+
+// .class {
+//     @include tablets {
+//          color:red
+//     }
+// }
+.main {
+    background: $colorGradient;
+    height: 1000px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.main__blocks {
+    display: flex;
+    justify-content: space-between;
+    & .main__block {
+        background: darkmagenta;
+        width: 200px;
+        height: 200px;
+    }
+}
